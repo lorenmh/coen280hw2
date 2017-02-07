@@ -6,7 +6,7 @@ CREATE TABLE movie (
   prod_cost NUMBER NOT NULL,
   release_date DATE,
   language VARCHAR(64) NOT NULL,
-  PRIMARY KEY (serial_no)
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE genre (
@@ -20,7 +20,7 @@ CREATE TABLE tv_show (
   network VARCHAR(64),
   name VARCHAR(128) NOT NULL,
   category VARCHAR(64),
-  PRIMARY KEY (network, name)
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE location (
@@ -47,4 +47,4 @@ CREATE TABLE episode (
   length_minutes INTEGER,
   PRIMARY KEY (movie_id, season_num, num),
   FOREIGN KEY (movie_id, season_num) REFERENCES season(movie_id, num)
-)
+);
