@@ -35,7 +35,7 @@ CREATE TABLE season (
   num INTEGER NOT NULL,
   start_date DATE NOT NULL,
   end_date DATE,
-  PRIMARY KEY (movie_id),
+  PRIMARY KEY (movie_id, num),
   FOREIGN KEY (movie_id) REFERENCES movie(id)
 );
 
