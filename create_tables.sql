@@ -32,13 +32,29 @@ CREATE TABLE movie (
 );
 
 CREATE TABLE language (
+  id INTEGER,
   title VARCHAR(64),
-  PRIMARY KEY (title)
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE genre (
+  id INTEGER,
   title VARCHAR(64),
-  PRIMARY KEY (title)
+  PRIMARY KEY (id)
+);
+
+create table movie_genre (
+  movie_id integer,
+  genre_id integer,
+  foreign key (movie_id) references movie(id),
+  foreign key (genre_id) references genre(id)
+);
+
+create table movie_language (
+  movie_id integer,
+  language_id integer,
+  foreign key (movie_id) references movie(id),
+  foreign key (language_id) references language(id)
 );
 
 CREATE TABLE tv_show (

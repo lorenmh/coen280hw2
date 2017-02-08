@@ -12,6 +12,8 @@ DROP TABLE season;
 DROP TABLE genre;
 DROP TABLE scene;
 DROP TABLE imdb_user;
+DROP TABLE movie_language;
+DROP TABLE movie_genre;
 DROP TABLE movie;
 DROP TABLE tv_show;
 DROP TABLE celebrity;
