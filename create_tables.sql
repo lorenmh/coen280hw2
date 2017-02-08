@@ -164,3 +164,5 @@ CREATE TABLE tv_show_actor (
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
+
+show errors;
