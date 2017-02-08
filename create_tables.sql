@@ -149,7 +149,7 @@ CREATE TABLE critic_review (
 CREATE TABLE movie_actor (
   movie_id INTEGER,
   celebrity_id INTEGER,
-  title VARCHAR(128),
+  role VARCHAR(128),
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
@@ -159,7 +159,7 @@ CREATE TABLE tv_show_actor (
   season_num INTEGER,
   episode_num INTEGER,
   celebrity_id INTEGER,
-  title VARCHAR(128),
+  role VARCHAR(128),
   FOREIGN KEY (tv_show_id, season_num, episode_num)
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
