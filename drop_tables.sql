@@ -1,3 +1,4 @@
+DROP TABLE tv_show_actor;
 DROP TABLE episode;
 DROP TABLE season;
 DROP TABLE genre;
@@ -11,4 +12,3 @@ DROP TABLE imdb_user_review;
 DROP TABLE critic_review;
 DROP TABLE imdb_user;
 DROP TABLE movie_actor;
-DROP TABLE tv_show_actor;
