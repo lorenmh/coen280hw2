@@ -95,7 +95,7 @@ CREATE TABLE award (
 CREATE TABLE movie_nomination (
   movie_id INTEGER,
   award_id INTEGER,
-  is_winner BOOLEAN,
+  is_winner NUMBER(1),
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (award_id) REFERENCES award(id),
 );
