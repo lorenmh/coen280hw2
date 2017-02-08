@@ -92,21 +92,6 @@ CREATE TABLE award (
   FOREIGN KEY (awards_event_id) REFERENCES awards_event(id)
 );
 
-CREATE TABLE movie_nomination (
-  movie_id INTEGER,
-  award_id INTEGER,
-);
-
-CREATE TABLE tv_show_nomination (
-  tv_show_id INTEGER,
-  award_id INTEGER,
-);
-
-CREATE TABLE celebrity_nomination (
-  celebrity_id INTEGER,
-  award_id INTEGER,
-);
-
 CREATE TABLE imdb_user (
   id INTEGER,
   fname VARCHAR(64),
