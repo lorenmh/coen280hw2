@@ -27,7 +27,7 @@ CREATE TABLE movie (
   location_id INTEGER,
   PRIMARY KEY (id),
   FOREIGN KEY (director_celebrity_id, producer_celebrity_id)
-      REFERENCES celebrity(id),
+      REFERENCES celebrity(id, id),
   FOREIGN KEY (location_id) REFERENCES location(id)
 );
 
