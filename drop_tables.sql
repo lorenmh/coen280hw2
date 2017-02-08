@@ -9,4 +9,4 @@ DROP TABLE nomination;
 DROP TABLE awards_event;
 DROP TABLE user_review;
 DROP TABLE critic_review;
-DROP TABLE user;
+DROP TABLE imdb_user;

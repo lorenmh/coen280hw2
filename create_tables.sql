@@ -86,7 +86,7 @@ CREATE TABLE imdb_user (
   lname VARCHAR(64),
   dob DATE,
   email VARCHAR(128),
-  gender VARCHAR(16)
+  gender VARCHAR(16),
   PRIMARY KEY (id)
 );
 
