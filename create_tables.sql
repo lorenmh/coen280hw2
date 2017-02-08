@@ -92,6 +92,30 @@ CREATE TABLE award (
   FOREIGN KEY (awards_event_id) REFERENCES awards_event(id)
 );
 
+CREATE TABLE movie_nomination (
+  movie_id INTEGER,
+  award_id INTEGER,
+  is_winner INTEGER(1),
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (award_id) REFERENCES award(id)
+);
+
+CREATE TABLE tv_show_nomination (
+  tv_show_id INTEGER,
+  award_id INTEGER,
+  is_winner NUMBER(1),
+  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id),
+  FOREIGN KEY (award_id) REFERENCES award(id)
+);
+
+CREATE TABLE celebrity_nomination (
+  celebrity_id INTEGER,
+  award_id INTEGER,
+  is_winner NUMBER(1),
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
+  FOREIGN KEY (award_id) REFERENCES award(id)
+);
+
 CREATE TABLE imdb_user (
   id INTEGER,
   fname VARCHAR(64),
