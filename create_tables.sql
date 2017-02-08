@@ -34,12 +34,12 @@ CREATE TABLE movie (
 CREATE TABLE language (
   title VARCHAR(64),
   PRIMARY KEY (title)
-)
+);
 
 CREATE TABLE genre (
   title VARCHAR(64),
   PRIMARY KEY (title)
-)
+);
 
 CREATE TABLE tv_show (
   id INTEGER,
