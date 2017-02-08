@@ -49,6 +49,15 @@ CREATE TABLE tv_show (
   PRIMARY KEY (id)
 );
 
+CREATE TABLE scene (
+  movie_id INTEGER,
+  num INTEGER NOT NULL,
+  location_id INTEGER,
+  PRIMARY KEY (movie_id, num),
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (location_id) REFERENCES location(id)
+);
+
 CREATE TABLE season (
   tv_show_id INTEGER,
   num INTEGER NOT NULL,
@@ -70,16 +79,51 @@ CREATE TABLE episode (
 
 CREATE TABLE awards_event(
   id INTEGER,
-  name VARCHAR(64),
+  name VARCHAR(128),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE nomination (
-  awards_event_id INTEGER,
-  category VARCHAR(128),
+CREATE TABLE award (
+  id INTEGER,
+  awards_event_id INTEGER NOT NULL,
+  category VARCHAR(128) NOT NULL,
   awards_date DATE,
-  PRIMARY KEY (awards_event_id, category),
+  PRIMARY KEY (id),
   FOREIGN KEY (awards_event_id) REFERENCES awards_event(id)
+);
+
+CREATE TABLE movie_nomination (
+  movie_id INTEGER,
+  award_id INTEGER,
+  is_winner BOOLEAN,
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (award_id) REFERENCES award(id),
+);
+
+CREATE TABLE tv_show_nomination (
+  tv_show_id INTEGER,
+  award_id INTEGER,
+  is_winner BOOLEAN,
+  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id),
+  FOREIGN KEY (award_id) REFERENCES award(id),
+);
+
+CREATE TABLE celebrity_nomination (
+  celebrity_id INTEGER,
+  award_id INTEGER,
+  is_winner BOOLEAN,
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
+  FOREIGN KEY (award_id) REFERENCES award(id),
+);
+
+CREATE TABLE imdb_user (
+  id INTEGER,
+  fname VARCHAR(64),
+  lname VARCHAR(64),
+  dob DATE,
+  email VARCHAR(128),
+  gender VARCHAR(16),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE imdb_user_review (
@@ -102,20 +146,10 @@ CREATE TABLE critic_review (
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
 
-CREATE TABLE imdb_user (
-  id INTEGER,
-  fname VARCHAR(64),
-  lname VARCHAR(64),
-  dob DATE,
-  email VARCHAR(128),
-  gender VARCHAR(16),
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE movie_actor (
   movie_id INTEGER,
   celebrity_id INTEGER,
-  PRIMARY KEY (movie_id, celebrity_id),
+  role VARCHAR(128),
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
@@ -125,7 +159,7 @@ CREATE TABLE tv_show_actor (
   season_num INTEGER,
   episode_num INTEGER,
   celebrity_id INTEGER,
-  PRIMARY KEY (tv_show_id, season_num, episode_num, celebrity_id),
+  role VARCHAR(128),
   FOREIGN KEY (tv_show_id, season_num, episode_num)
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
