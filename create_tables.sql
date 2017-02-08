@@ -95,25 +95,16 @@ CREATE TABLE award (
 CREATE TABLE movie_nomination (
   movie_id INTEGER,
   award_id INTEGER,
-  is_winner NUMBER(1),
-  FOREIGN KEY (movie_id) REFERENCES movie(id),
-  FOREIGN KEY (award_id) REFERENCES award(id),
 );
 
 CREATE TABLE tv_show_nomination (
   tv_show_id INTEGER,
   award_id INTEGER,
-  is_winner NUMBER(1),
-  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id),
-  FOREIGN KEY (award_id) REFERENCES award(id),
 );
 
 CREATE TABLE celebrity_nomination (
   celebrity_id INTEGER,
   award_id INTEGER,
-  is_winner NUMBER(1),
-  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
-  FOREIGN KEY (award_id) REFERENCES award(id),
 );
 
 CREATE TABLE imdb_user (
@@ -149,7 +140,7 @@ CREATE TABLE critic_review (
 CREATE TABLE movie_actor (
   movie_id INTEGER,
   celebrity_id INTEGER,
-  role VARCHAR(128),
+  title VARCHAR(128),
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
@@ -159,10 +150,8 @@ CREATE TABLE tv_show_actor (
   season_num INTEGER,
   episode_num INTEGER,
   celebrity_id INTEGER,
-  role VARCHAR(128),
+  title VARCHAR(128),
   FOREIGN KEY (tv_show_id, season_num, episode_num)
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
-
-show errors;
