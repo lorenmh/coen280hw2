@@ -54,7 +54,6 @@ CREATE TABLE awards_event(
   id INTEGER,
   name VARCHAR(64),
   PRIMARY KEY (id)
-
 );
 
 CREATE TABLE nomination (
@@ -81,7 +80,7 @@ CREATE TABLE critic_review (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE user (
+CREATE TABLE imdb_user (
   id RAW(16) DEFAULT SYS_GUID(),
   fname VARCHAR(64),
   lname VARCHAR(64),
