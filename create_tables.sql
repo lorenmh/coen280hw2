@@ -1,28 +1,3 @@
--- Entity Definition
-CREATE TABLE movie (
-  -- 16 bit GUID
-  id RAW(16) DEFAULT SYS_GUID(),
-  title VARCHAR(128) NOT NULL,
-  prod_cost NUMBER NOT NULL,
-  release_date DATE,
-  language VARCHAR(64) NOT NULL,
-  PRIMARY KEY (id)
-);
-
-CREATE TABLE genre (
-  title VARCHAR(64),
-  PRIMARY KEY (id)
-)
-
-CREATE TABLE tv_show (
-  -- 16 bit GUID
-  id RAW(16) DEFAULT SYS_GUID(),
-  network VARCHAR(64),
-  name VARCHAR(128) NOT NULL,
-  category VARCHAR(64),
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE location (
   id INTEGER,
   nation VARCHAR(128),
@@ -31,23 +6,66 @@ CREATE TABLE location (
   PRIMARY KEY (id)
 );
 
+CREATE TABLE celebrity (
+  id INTEGER,
+  fname VARCHAR(64),
+  lname VARCHAR(64),
+  dob DATE,
+  birth_location_id INTEGER,
+  PRIMARY KEY (id),
+  FOREIGN KEY (birth_location_id) REFERENCES location(id)
+);
+
+-- Entity Definition
+CREATE TABLE movie (
+  id INTEGER,
+  title VARCHAR(128) NOT NULL,
+  prod_cost NUMBER NOT NULL,
+  release_date DATE,
+  director_celebrity_id INTEGER,
+  producer_celebrity_id INTEGER,
+  location_id INTEGER,
+  PRIMARY KEY (id),
+  FOREIGN KEY (director_celebrity_id, producer_celebrity_id)
+      REFERENCES celebrity(id),
+  FOREIGN KEY (location_id) REFERENCES location(id)
+);
+
+CREATE TABLE language (
+  title VARCHAR(64),
+  PRIMARY KEY (title)
+)
+
+CREATE TABLE genre (
+  title VARCHAR(64),
+  PRIMARY KEY (title)
+)
+
+CREATE TABLE tv_show (
+  id INTEGER,
+  network VARCHAR(64),
+  name VARCHAR(128) NOT NULL,
+  category VARCHAR(64),
+  PRIMARY KEY (id)
+);
+
 CREATE TABLE season (
-  movie_id RAW(16) NOT NULL,
+  tv_show_id INTEGER,
   num INTEGER NOT NULL,
   start_date DATE NOT NULL,
   end_date DATE,
-  PRIMARY KEY (movie_id, num),
-  FOREIGN KEY (movie_id) REFERENCES movie(id)
+  PRIMARY KEY (tv_show_id, num),
+  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id)
 );
 
 CREATE TABLE episode (
-  movie_id RAW(16),
+  tv_show_id INTEGER,
   season_num INTEGER,
   num INTEGER,
   title VARCHAR(128),
   length_minutes INTEGER,
-  PRIMARY KEY (movie_id, season_num, num),
-  FOREIGN KEY (movie_id, season_num) REFERENCES season(movie_id, num)
+  PRIMARY KEY (tv_show_id, season_num, num),
+  FOREIGN KEY (tv_show_id, season_num) REFERENCES season(tv_show_id, num)
 );
 
 CREATE TABLE awards_event(
@@ -64,24 +82,28 @@ CREATE TABLE nomination (
   FOREIGN KEY (awards_event_id) REFERENCES awards_event(id)
 );
 
-CREATE TABLE user_review (
+CREATE TABLE imdb_user_review (
   id INTEGER,
+  imdb_user_id INTEGER,
   text VARCHAR(4000),
   publish_date DATE,
   rating NUMBER,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
 );
 
 CREATE TABLE critic_review (
   id INTEGER,
+  celebrity_id INTEGER,
   text VARCHAR(4000),
   publish_date DATE,
   rating NUMBER,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );
 
 CREATE TABLE imdb_user (
-  id RAW(16) DEFAULT SYS_GUID(),
+  id INTEGER,
   fname VARCHAR(64),
   lname VARCHAR(64),
   dob DATE,
@@ -90,12 +112,21 @@ CREATE TABLE imdb_user (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE celebrity (
-  id RAW(16) DEFAULT SYS_GUID(),
-  fname VARCHAR(64),
-  lname VARCHAR(64),
-  dob DATE,
-  birth_location_id INTEGER,
-  PRIMARY KEY (id),
-  FOREIGN KEY (birth_location_id) REFERENCES location(id)
+CREATE TABLE movie_actor (
+  movie_id INTEGER,
+  celebrity_id INTEGER,
+  PRIMARY KEY (movie_id, celebrity_id),
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
+);
+
+CREATE TABLE tv_show_actor (
+  tv_show_id INTEGER,
+  season_num INTEGER,
+  episode_num INTEGER,
+  celebrity_id INTEGER,
+  PRIMARY KEY (tv_show_id, season_num, episode_num, celebrity_id),
+  FOREIGN KEY (tv_show_id, season_num, episode_num)
+      REFERENCES episode(tv_show_id, season_num, num),
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
 );

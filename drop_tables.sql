@@ -1,12 +1,14 @@
 DROP TABLE episode;
 DROP TABLE season;
 DROP TABLE genre;
-DROP TABLE movie;
-DROP TABLE tv_show;
 DROP TABLE celebrity;
+DROP TABLE movie;
 DROP TABLE location;
+DROP TABLE tv_show;
 DROP TABLE nomination;
 DROP TABLE awards_event;
-DROP TABLE user_review;
+DROP TABLE imdb_user_review;
 DROP TABLE critic_review;
 DROP TABLE imdb_user;
+DROP TABLE movie_actor;
+DROP TABLE tv_show_actor;
