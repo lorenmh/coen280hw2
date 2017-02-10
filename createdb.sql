@@ -3,7 +3,7 @@ CREATE TABLE person (
   name VARCHAR(64),
   dob DATE,
   gender CHAR(1),
-  birthplace VARCHAR(128),
+  birth_place VARCHAR(128),
   attribute VARCHAR(128),
   PRIMARY KEY (id)
 );
@@ -127,6 +127,7 @@ CREATE TABLE imdb_user (
   fname VARCHAR(64),
   lname VARCHAR(64),
   dob DATE,
+  birth_place VARCHAR(64),
   email VARCHAR(128),
   gender VARCHAR(16),
   PRIMARY KEY (id)
@@ -243,3 +244,37 @@ INSERT INTO person VALUES (
   20, 'Jennifer Aniston', TO_DATE('4/4/68', 'MM/DD/YY'), 'F', 'Seoul', 'Actor'
 );
 
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (
+  1, 'john@yahoo.com', 'John ', 'Smith     ', TO_DATE('10/5/95', 'MM/DD/YY'), 'FL', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (2, 'juan@gmail.com', 'Juan ', 'Carlos      ', TO_DATE('4/12/94', 'MM/DD/YY'), 'AK', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (3, 'Jane@gmail.com', 'Jane ', 'Chapel      ', TO_DATE('11/2/93', 'MM/DD/YY'), 'IL', 'F'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (4, 'adi@yahoo.com', 'Aditya', 'Awasthi', TO_DATE('12/12/92', 'MM/DD/YY'), 'CA', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (5, 'james@hotmail.com', 'James ', 'Williams     ', TO_DATE('5/5/91', 'MM/DD/YY'), 'NY', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (6, 'mike@yahoo.com', 'Mike ', 'Brown      ', TO_DATE('3/1/88', 'MM/DD/YY'), 'NC', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (7, 'bob@yahoo.com', 'Bob ', 'Jones     ', TO_DATE('2/7/88', 'MM/DD/YY'), 'NY ', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (8, 'wei@gmail.com',  'Wei ', 'Zhang ', TO_DATE('8/12/85', 'MM/DD/YY'), 'NV', 'F'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (9, 'mark@gmail.com', 'Mark ', 'Davis   ', TO_DATE('5/10/84', 'MM/DD/YY'), 'CA', 'M'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (10, 'daniel@yahoo.com', 'Daniel  ', 'Garcia      ', TO_DATE('6/1/80', 'MM/DD/YY'), 'NJ', 'M'
+);
+
+11, maria@hotmail.com, Maria, Rodriguez        , 3/18/75, CA, F
+12, freya@yahoo.com, Freya, Wilson     , 2/19/70, N
