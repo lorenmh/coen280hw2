@@ -427,3 +427,189 @@ INSERT INTO imdb_user_review VALUES(
 INSERT INTO imdb_user_review VALUES(
   16, 11, 7, 12, TO_TIMESTAMP_TZ('May-05-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
 );
+
+
+INSERT INTO movie_role VALUES (
+  1, 5, 'Jessica'
+);
+
+INSERT INTO movie_role VALUES (
+  1, 6, 'robert'
+);
+
+INSERT INTO movie_role VALUES (
+  2, 5, 'John'
+);
+
+INSERT INTO movie_role VALUES (
+  2, 6, 'Mark'
+);
+
+INSERT INTO movie_role VALUES (
+  3, 9, 'Alex'
+);
+
+INSERT INTO movie_role VALUES (
+  3, 7, 'Julie'
+);
+
+INSERT INTO movie_role VALUES (
+  4, 5, 'Jessica'
+);
+
+INSERT INTO movie_role VALUES (
+  4, 6, 'Matt'
+);
+
+INSERT INTO movie_role VALUES (
+  4, 8, 'Jennifer'
+);
+
+INSERT INTO movie_role VALUES (
+  5, 7, 'Jennifer'
+);
+
+INSERT INTO movie_role VALUES (
+  5, 8, 'Tom'
+);
+
+INSERT INTO movie_role VALUES (
+  5, 5, 'Milo'
+);
+
+INSERT INTO movie_role VALUES (
+  6, 6, 'Chris'
+);
+
+INSERT INTO movie_role VALUES (
+  6, 7, 'Rose'
+);
+
+INSERT INTO movie_role VALUES (
+  6, 5, 'Bill'
+);
+
+INSERT INTO movie_role VALUES (
+  7, 10, 'Jane'
+);
+
+INSERT INTO movie_role VALUES (
+  7, 5, 'Brad'
+);
+
+INSERT INTO movie_role VALUES (
+  8, 9, 'Lucas'
+);
+
+INSERT INTO movie_role VALUES (
+  8, 10, 'Juanita'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Clayne'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Jane'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Brad'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Lucas'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Bradley'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 9, 'Justin'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 17, 'Martin'
+);
+
+INSERT INTO movie_role VALUES (
+  9, 19, 'Mike'
+);
+
+INSERT INTO movie_role VALUES (
+  10, 3, 'Travis'
+);
+
+INSERT INTO movie_role VALUES (
+  10, 5, 'Alexander'
+);
+
+INSERT INTO movie_role VALUES (
+  10, 6, 'Justin'
+);
+
+INSERT INTO movie_role VALUES (
+  11, 3, 'Jessica'
+);
+
+INSERT INTO movie_role VALUES (
+  11, 5, 'Johnny'
+);
+
+INSERT INTO movie_role VALUES (
+  11, 8, 'Rami'
+);
+
+INSERT INTO movie_role VALUES (
+  11, 9, 'Sam'
+);
+
+INSERT INTO movie_role VALUES (
+  12, 9, 'Gatek'
+);
+
+INSERT INTO movie_role VALUES (
+  12, 10, 'Rose'
+);
+
+INSERT INTO movie_role VALUES (
+  12, 3, 'maria'
+);
+
+INSERT INTO movie_role VALUES (
+  13, 5, 'Travis'
+);
+
+INSERT INTO movie_role VALUES (
+  13, 6, 'Alexander'
+);
+
+INSERT INTO movie_role VALUES (
+  13, 16, 'Pearl'
+);
+
+INSERT INTO movie_role VALUES (
+  15, 12, 'Sofia'
+);
+
+INSERT INTO movie_role VALUES (
+  15, 18, 'chrissy'
+);
+
+INSERT INTO movie_role VALUES (
+  15, 9, 'Mike'
+);
+
+INSERT INTO movie_role VALUES (
+  16, 10, 'Martin'
+);
+
+INSERT INTO movie_role VALUES (
+  16, 15, 'Bill'
+);
+
+INSERT INTO movie_role VALUES (
+  16, 16, 'Emilia'
+);
+
