@@ -14,7 +14,6 @@ DROP TABLE imdb_user;
 DROP TABLE movie_language;
 DROP TABLE movie_genre;
 DROP TABLE language;
-DROP TABLE genre;
 DROP TABLE movie;
 DROP TABLE tv_show;
 DROP TABLE person;

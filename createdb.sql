@@ -28,17 +28,10 @@ CREATE TABLE language (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE genre (
-  id INTEGER,
-  title VARCHAR(64),
-  PRIMARY KEY (id)
-);
-
 create table movie_genre (
   movie_id integer,
-  genre_id integer,
+  genre VARCHAR(32),
   foreign key (movie_id) references movie(id),
-  foreign key (genre_id) references genre(id)
 );
 
 create table movie_language (
@@ -611,5 +604,90 @@ INSERT INTO movie_role VALUES (
 
 INSERT INTO movie_role VALUES (
   16, 16, 'Emilia'
+);
+
+
+INSERT INTO movie_genre VALUES (
+  1, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  2, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  2, 'Comedy'
+);
+
+INSERT INTO movie_genre VALUES (
+  3, 'Comedy'
+);
+
+INSERT INTO movie_genre VALUES (
+  4, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  5, 'Comedy'
+);
+
+INSERT INTO movie_genre VALUES (
+  5, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  6, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  7, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  8, 'Comedy'
+);
+
+INSERT INTO movie_genre VALUES (
+  9, 'Comedy'
+);
+
+INSERT INTO movie_genre VALUES (
+  10, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  11, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  12, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  12, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  13, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  13, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  15, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  15, 'Thriller'
+);
+
+INSERT INTO movie_genre VALUES (
+  16, 'Action'
+);
+
+INSERT INTO movie_genre VALUES (
+  16, 'Comedy'
 );
 
