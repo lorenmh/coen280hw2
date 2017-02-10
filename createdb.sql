@@ -138,7 +138,7 @@ CREATE TABLE imdb_user_review (
   imdb_user_id INTEGER NOT NULL,
   rating INTEGER,
   votes INTEGER,
-  publish_date DATE,
+  publish_date TIMESTAMP WITH TIME ZONE,
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
 );
@@ -343,3 +343,87 @@ INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
   16, 'The Island', TO_DATE('2010', 'YYYY'), 4
 );
 
+
+INSERT INTO imdb_user_review VALUES(
+  1, 1, 7, 25, TO_TIMESTAMP_TZ('Oct-02-07 09:10:54 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  2, 2, 8, 35, TO_TIMESTAMP_TZ('Sep-29-07 13:45:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  2, 3, 9, 24, TO_TIMESTAMP_TZ('Sep-29-07 10:38:25 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  3, 4, 10, 8, TO_TIMESTAMP_TZ('Oct-02-13 13:05:56 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  3, 5, 9, 11, TO_TIMESTAMP_TZ('Oct-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  4, 6, 8, 6, TO_TIMESTAMP_TZ('Sep-26-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  4, 7, 7, 23, TO_TIMESTAMP_TZ('Sep-26-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  5, 9, 9, 22, TO_TIMESTAMP_TZ('Sep-28-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  6, 10, 8, 26, TO_TIMESTAMP_TZ('Oct-29-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  7, 11, 8, 27, TO_TIMESTAMP_TZ('Sep-30-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  7, 12, 8, 18, TO_TIMESTAMP_TZ('Oct-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  8, 1, 7, 19, TO_TIMESTAMP_TZ('Sep-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  9, 2, 7, 16, TO_TIMESTAMP_TZ('Sep-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  10, 3, 8, 18, TO_TIMESTAMP_TZ('Sep-29-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  11, 4, 9, 22, TO_TIMESTAMP_TZ('Jun-07-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  11, 5, 10, 13, TO_TIMESTAMP_TZ('May-05-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  12, 6, 9, 50, TO_TIMESTAMP_TZ('May-05-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  13, 7, 5, 34, TO_TIMESTAMP_TZ('Oct-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  13, 1, 4, 34, TO_TIMESTAMP_TZ('Oct-25-07 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  15, 10, 8, 25, TO_TIMESTAMP_TZ('May-05-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
+
+INSERT INTO imdb_user_review VALUES(
+  16, 11, 7, 12, TO_TIMESTAMP_TZ('May-05-15 17:15:00 PDT', 'Mon-DD-YY HH24:MI:SS TZD')
+);
