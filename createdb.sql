@@ -139,7 +139,7 @@ CREATE TABLE imdb_user_review (
   votes INTEGER,
   publish_date DATE,
   FOREIGN KEY (movie_id) REFERENCES movie(id),
-  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id),
+  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
 );
 
 CREATE TABLE critic_review (
