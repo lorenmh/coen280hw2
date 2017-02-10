@@ -31,7 +31,7 @@ CREATE TABLE language (
 create table movie_genre (
   movie_id integer,
   genre VARCHAR(32),
-  foreign key (movie_id) references movie(id),
+  foreign key (movie_id) references movie(id)
 );
 
 create table movie_language (
