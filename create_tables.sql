@@ -198,8 +198,8 @@ CREATE TABLE critic_review_vote (
 );
 
 CREATE TABLE recommended_imdb_user_review (
-  celebrity_id INTEGER,
-  imdb_user_review_id INTEGER,
+  celebrity_id INTEGER NOT NULL,
+  imdb_user_review_id INTEGER NOT NULL,
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
-  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
+  FOREIGN KEY (imdb_user_review_id) REFERENCES imdb_user_review(id)
 );
