@@ -280,7 +280,7 @@ INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES 
 INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (11, 'maria@hotmail.com', 'Maria', 'Rodriguez        ', TO_DATE('3/18/75', 'MM/DD/YY'), 'CA', 'F'
 );
 
-INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (12, 'freya@yahoo.com', 'Freya', 'Wilson     ', TO_DATE('2/19/70', 'MM/DD/YY'), 'N'
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (12, 'freya@yahoo.com', 'Freya', 'Wilson     ', TO_DATE('2/19/70', 'MM/DD/YY'), 'NJ', 'F'
 );
 
 INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
@@ -296,7 +296,7 @@ INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
 );
 
 INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
-  4, 'The Devil\'s Advocate', TO_DATE('1997', 'YYYY'), 1
+  4, 'The Devil''s Advocate', TO_DATE('1997', 'YYYY'), 1
 );
 
 INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
