@@ -147,7 +147,6 @@ CREATE TABLE critic_review (
   movie_id INTEGER,
   text VARCHAR(4000),
   publish_date DATE,
-  PRIMARY KEY (id),
   FOREIGN KEY (person_id) REFERENCES person(id),
   FOREIGN KEY (movie_id) REFERENCES movie(id),
   FOREIGN KEY (tv_show_id) REFERENCES tv_show(id)
