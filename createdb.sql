@@ -5,7 +5,7 @@ CREATE TABLE person (
   gender CHAR(1),
   birthplace VARCHAR(128),
   attribute VARCHAR(128),
-  PRIMARY KEY (id),
+  PRIMARY KEY (id)
 );
 
 -- Entity Definition
@@ -19,7 +19,7 @@ CREATE TABLE movie (
   location VARCHAR(128),
   PRIMARY KEY (id),
   FOREIGN KEY (director_person_id) REFERENCES person(id),
-  FOREIGN KEY (producer_person_id) REFERENCES person(id),
+  FOREIGN KEY (producer_person_id) REFERENCES person(id)
 );
 
 CREATE TABLE language (
