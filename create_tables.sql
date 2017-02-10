@@ -144,22 +144,29 @@ CREATE TABLE imdb_user (
 
 CREATE TABLE imdb_user_review (
   id INTEGER,
-  imdb_user_id INTEGER,
+  imdb_user_id INTEGER NOT NULL,
+  movie_id INTEGER,
+  tv_show_id INTEGER,
   text VARCHAR(4000),
   publish_date DATE,
   rating NUMBER,
   PRIMARY KEY (id),
-  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
+  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id),
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id)
 );
 
 CREATE TABLE critic_review (
   id INTEGER,
-  celebrity_id INTEGER,
+  celebrity_id INTEGER NOT NULL,
+  movie_id INTEGER,
+  tv_show_id INTEGER,
   text VARCHAR(4000),
   publish_date DATE,
-  rating NUMBER,
   PRIMARY KEY (id),
-  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
+  FOREIGN KEY (movie_id) REFERENCES movie(id),
+  FOREIGN KEY (tv_show_id) REFERENCES tv_show(id)
 );
 
 CREATE TABLE movie_actor (
@@ -179,4 +186,20 @@ CREATE TABLE tv_show_actor (
   FOREIGN KEY (tv_show_id, season_num, episode_num)
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (celebrity_id) REFERENCES celebrity(id)
+);
+
+CREATE TABLE critic_review_vote (
+  critic_review_id INTEGER NOT NULL,
+  imdb_user_id INTEGER NOT NULL,
+  rating NUMBER,
+  category VARCHAR(64),
+  FOREIGN KEY (critic_review_id) REFERENCES critic_review(id),
+  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
+);
+
+CREATE TABLE recommended_imdb_user_review (
+  celebrity_id INTEGER,
+  imdb_user_review_id INTEGER,
+  FOREIGN KEY (celebrity_id) REFERENCES celebrity(id),
+  FOREIGN KEY (imdb_user_id) REFERENCES imdb_user(id)
 );

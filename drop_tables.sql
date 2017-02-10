@@ -1,3 +1,5 @@
+DROP TABLE recommended_imdb_user_review;
+DROP TABLE critic_review_vote;
 DROP TABLE movie_actor;
 DROP TABLE tv_show_actor;
 DROP TABLE movie_nomination;
