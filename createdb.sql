@@ -172,6 +172,7 @@ CREATE TABLE tv_show_role (
 );
 
 
+-- I had to use vim to format this, so forgive the sometimes misformattedness
 INSERT INTO person VALUES (
   1, 'Brian de forma', TO_DATE('9/11/40', 'MM/DD/YY'), 'M', 'New York', 'Director'
 );
@@ -276,5 +277,69 @@ INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES 
 INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (10, 'daniel@yahoo.com', 'Daniel  ', 'Garcia      ', TO_DATE('6/1/80', 'MM/DD/YY'), 'NJ', 'M'
 );
 
-11, maria@hotmail.com, Maria, Rodriguez        , 3/18/75, CA, F
-12, freya@yahoo.com, Freya, Wilson     , 2/19/70, N
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (11, 'maria@hotmail.com', 'Maria', 'Rodriguez        ', TO_DATE('3/18/75', 'MM/DD/YY'), 'CA', 'F'
+);
+
+INSERT INTO imdb_user(id, email, fname, lname, dob, birth_place, gender) VALUES (12, 'freya@yahoo.com', 'Freya', 'Wilson     ', TO_DATE('2/19/70', 'MM/DD/YY'), 'N'
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  1, 'Scarface', TO_DATE('1988', 'YYYY'), 1
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  2, 'Scent of a women', TO_DATE('1995', 'YYYY'), 2
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  3, 'My big fat greek wedding', TO_DATE('2000', 'YYYY'), 4
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  4, 'The Devil\'s Advocate', TO_DATE('1997', 'YYYY'), 1
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  5, 'Mr. and Mrs Smith', TO_DATE('1965', 'YYYY'), 1
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  6, 'Now You see me', TO_DATE('2013', 'YYYY'), 2
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  7, 'Barely Lethal', TO_DATE('2014', 'YYYY'), 4
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  8, 'The Man with one red shoe', TO_DATE('1984', 'YYYY'), 1
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  9, 'The Polar Express', TO_DATE('2010', 'YYYY'), 2
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  10, 'Her', TO_DATE('2013', 'YYYY'), 2
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  11, 'Lucy', TO_DATE('2015', 'YYYY'), 4
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  12, 'The Da Vinci Code', TO_DATE('2005', 'YYYY'), 4
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  13, 'The God Father part II', TO_DATE('1975', 'YYYY'), 1
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  15, 'Angels and Daemons', TO_DATE('2009', 'YYYY'), 2
+);
+
+INSERT INTO movie(id, title, release_date, director_person_id) VALUES (
+  16, 'The Island', TO_DATE('2010', 'YYYY'), 4
+);
+
