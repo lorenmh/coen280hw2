@@ -2,7 +2,7 @@ CREATE TABLE person (
   id INTEGER,
   name VARCHAR(64),
   dob DATE,
-  gender CHAR(1)
+  gender CHAR(1),
   birthplace VARCHAR(128),
   attribute VARCHAR(128),
   PRIMARY KEY (id),
