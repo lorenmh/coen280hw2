@@ -169,3 +169,76 @@ CREATE TABLE tv_show_role (
       REFERENCES episode(tv_show_id, season_num, num),
   FOREIGN KEY (person_id) REFERENCES person(id)
 );
+
+INSERT INTO person VALUES (
+  1, 'Brian de forma', TO_DATE('9/11/40', 'MM/DD/YY'), 'M', 'New York', 'Director'
+);
+
+INSERT INTO person VALUES (
+  2, 'Martin Brest', TO_DATE('8/8/51', 'MM/DD/YY'), 'M', 'San Jose, Director'
+);
+
+INSERT INTO person VALUES (
+  3, 'Scarlett Johanson', TO_DATE('11/22/84', 'MM/DD/YY'), 'F', 'Austin, Actor'
+);
+
+INSERT INTO person VALUES (
+  4, 'Luc Besson', TO_DATE('5/30/75', 'MM/DD/YY'), 'F', 'Paris, Director'
+);
+
+INSERT INTO person VALUES (
+  5, 'Morgan Freeman', TO_DATE('6/5/53', 'MM/DD/YY'), 'M', 'Canberra, Actor'
+);
+
+INSERT INTO person VALUES (
+  6, 'Al Pacino', TO_DATE('11/12/56', 'MM/DD/YY'), 'M', 'Portland, Actor'
+);
+
+INSERT INTO person VALUES (
+  7, 'Angelina Jolie', TO_DATE('3/3/70', 'MM/DD/YY'), 'F', 'Seattle, Actor'
+);
+
+INSERT INTO person VALUES (
+  8, 'Brad Pitt', TO_DATE('4/4/75', 'MM/DD/YY'), 'M', 'London, Actor'
+);
+
+INSERT INTO person VALUES (
+  9, 'Tom Hanks', TO_DATE('5/19/64', 'MM/DD/YY'), 'M', 'Perth, Actor'
+);
+
+INSERT INTO person VALUES (
+  10, 'Jessica Alba', TO_DATE('8/7/83', 'MM/DD/YY'), 'F', 'Seoul, Actor'
+);
+
+INSERT INTO person VALUES (
+  12, 'Alex Parish', TO_DATE('7/9/77', 'MM/DD/YY'), 'F', 'San Jose, Actor'
+);
+
+INSERT INTO person VALUES (
+  13, 'Jack Nicholson', TO_DATE('11/13/58', 'MM/DD/YY'), 'M', 'Austin, Actor'
+);
+
+INSERT INTO person VALUES (
+  15, 'Harrison Ford', TO_DATE('9/11/57', 'MM/DD/YY'), 'M', 'Canberra, Actor'
+);
+
+INSERT INTO person VALUES (
+  16, 'Julia Roberts', TO_DATE('1/1/67', 'MM/DD/YY'), 'F', 'Portland, Actor'
+);
+
+INSERT INTO person VALUES (
+  17, 'Matt Damon', TO_DATE('1/7/71', 'MM/DD/YY'), 'M', 'Seattle, Actor'
+);
+
+INSERT INTO person VALUES (
+  18, 'Jennifer Lawrence', TO_DATE('2/2/62', 'MM/DD/YY'), 'F', 'London, Actor'
+);
+
+INSERT INTO person VALUES (
+  19, 'George clooney', TO_DATE('3/3/65', 'MM/DD/YY'), 'M', 'Perth, Actor'
+);
+
+INSERT INTO person VALUES (
+  20, 'Jennifer Aniston', TO_DATE('4/4/68', 'MM/DD/YY'), 'F', 'Seoul, Actor'
+);
+
