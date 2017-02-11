@@ -17,3 +17,6 @@ DROP TABLE language;
 DROP TABLE movie;
 DROP TABLE tv_show;
 DROP TABLE person;
+
+DROP VIEW high_ratings;
+DROP VIEW low_ratings;

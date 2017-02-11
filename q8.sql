@@ -38,6 +38,3 @@ SELECT * FROM (
     GROUP BY mr.person_id, p.name
     ORDER BY COUNT(mr.movie_id) DESC, p.name ASC
 ) WHERE ROWNUM <= 10;
-
-DROP VIEW high_ratings;
-DROP VIEW low_ratings;
